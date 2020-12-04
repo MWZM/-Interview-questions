@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            address: '西安',
+            flag: true,
+            arr: [1, 2, 3, 4],
+            info: {
+                value: '你真好'
+            },
+
+        }
+
+        var obj2 = {}
+
+        function Copy(old, news) {
+            for (var k in old) {
+                if (old[k] instanceof Array) {
+                    news[k] = []
+                    Copy(old[k], news[k])
+                } else if (old[k] instanceof Object) {
+                    news[k] = {}
+                    Copy(old[k], news[k])
+                } else {
+                    news[k] = old[k]
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
