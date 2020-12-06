@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'hdhqwdhqhdqhdashadh'
+        var ob = {} // {h:2, d:1}
+        for (var i = 0; i <= str.length - 1; i++) {
+            if (ob[str[i]]) { //判断条件是false 或者true  用对象中有没有那个属性来进行判断
+                ob[str[i]]++
+                    // 给一个对象进行添加属性时是  对象名[添加的属性]
+            } else {
+                ob[str[i]] = 1
+            }
+        }
+        console.log(ob);
+        var max = 0;
+        var str1 = '';
+        for (var k in ob) {
+            if (max < ob[k]) {
+                max = ob[k]
+                str1 = k
+            }
+        }
+        console.log(max);
+        console.log(k);
+    </script>
+</body>
+
+</html>

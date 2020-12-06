@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 利用for循环去重
+        var arr = [1, 2, 3, 5, 6, 3, 2, 4]
+        var news = []
+        for (var i = 0; i < arr.length; i++) {
+            // 如果这个等于-1则代表这个数组没有添加这个元素
+            if (news.indexOf(arr[i]) === -1) {
+                news.push(arr[i])
+            }
+        }
+        console.log(news);
+
+        // set数组去重
+        let news = new Set([2, 3, 4, 5, 6, 2, 3, 1, 8, 9])
+
+        let one = [...news]
+        console.log(one);
+    </script>
+</body>
+
+</html>
