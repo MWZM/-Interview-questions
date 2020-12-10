@@ -20,16 +20,20 @@
             }
         }
         console.log(ob);
-        var max = 0;
+        var min = 1000;
         var str1 = '';
         for (var k in ob) {
-            if (max < ob[k]) {
-                max = ob[k]
+            if (min > ob[k]) {
+                min = ob[k]
                 str1 = k
+            } else if (min == ob[k]) {
+                min = min
+                var xx = k
             }
         }
-        console.log(max);
-        console.log(k);
+        console.log(min);
+        console.log(str1);
+        console.log(xx);
     </script>
 </body>
 
