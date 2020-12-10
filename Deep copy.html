@@ -20,7 +20,7 @@
         }
 
         var obj2 = {}
-
+            //利用递归进行深拷贝
         function Copy(old, news) {
             for (var k in old) {
                 if (old[k] instanceof Array) {
@@ -35,6 +35,11 @@
             }
 
         }
+        //利用字符串的不可变性进行深拷贝
+        //核心就是利用 JSON 进行转换
+        var newobj = JSON.parse(JSON.stringify(obj))
+        console.log(newobj);
+        //利用 JSON 进行字符串的转换时 只支持纯对象的嵌套，对象里嵌套函数或者new Fn都不支持
     </script>
 </body>
 
