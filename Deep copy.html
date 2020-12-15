@@ -35,6 +35,9 @@
             }
 
         }
+        Copy(obj, obj2)
+        console.log(obj2);
+        console.log(obj == obj2); //false
         //利用字符串的不可变性进行深拷贝
         //核心就是利用 JSON 进行转换
         var newobj = JSON.parse(JSON.stringify(obj))
@@ -44,7 +47,7 @@
         //   b. 无法拷贝copyObj对象原型链上的属性和方法
 
         // 3 .  Object.create()方法
-        // 复制对象存在于Object原型prototype中
+        复制对象存在于Object原型prototype中
 
         var obj = {
             x: 1,
@@ -57,7 +60,7 @@
 
         var obj2 = Object.create(obj);
         console.log(obj2 == obj); //false
-        console.log(obj2);
+        console.log(obj2); //这个对象存在于__proto__中
     </script>
 </body>
 
