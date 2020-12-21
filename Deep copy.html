@@ -46,7 +46,15 @@
         //   a.如果你的对象里有函数, 函数无法被拷贝下来
         //   b. 无法拷贝copyObj对象原型链上的属性和方法
 
-       
+
+        //利用原型进行赋值
+        var a = {
+            name: '张三'
+        }
+        var b = Object.assign({}, a)
+        a === b // false
+        b.name = '李四'
+        a.name //'张三'
     </script>
 </body>
 
