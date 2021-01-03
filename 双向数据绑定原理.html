@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div id="content">{{msg}}</div>
+        <input id="in" type="text">
+    </div>
+    <script>
+        var data = {}
+        var value = 'nihao';
+
+        var elDiv = document.querySelector('#content')
+        elDiv.innerHTML = value
+
+        var elInput = document.querySelector('#in')
+        elInput.value = value
+
+        elInput.addEventListener('input', function(e) {
+            data.msg = e.target.value
+        })
+
+        Object.defineProperty(data, 'msg', {
+            set: function(val) {
+                elDiv.innerHTML = val
+                elInput.value = val
+                value = val
+            },
+            get: function() {
+                console.log('get执行了');
+                return value
+            }
+        })
+
+        // 1.使用Object.defineProperty里的set函数，通过数据劫持，当数据变化页面也发生变化
+        // 2.在get函数中，通过观察者模式（发布订阅模式）使得DOM与数据进行绑定，以便数据变化了，所有的DOM都得到更新
+    </script>
+</body>
+</html>
