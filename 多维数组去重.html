@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let list = [
+      1, 1, 5,
+      [1, 1, 6],
+      [1, 1, 7, [1, 1, 78]]
+    ];
+    let newList = [];
+    newList = getList(list);
+    console.log(newList);
+
+
+    function getList(arr){
+      // console.log(new Set(arr), 'falg');
+      for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+          // console.log(Array.from(new Set(arr[i])), 'flag');
+          arr[i] = Array.from(new Set(arr[i]))
+          getList(arr[i])
+        }
+      }
+        // console.log(new Set(arr));
+        arr = Array.from(new Set(arr));
+        console.log(arr, 'flag');
+        return arr
+    }
+  </script>
+</body>
+
+</html>
